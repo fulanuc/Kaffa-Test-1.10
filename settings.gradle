@@ -1,0 +1,2 @@
+rootProject.name = "KaffaTest"
+include ':app'
