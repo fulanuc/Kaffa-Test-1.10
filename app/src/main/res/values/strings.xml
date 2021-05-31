@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">KaffaTest</string>
+    <string name="add_button">Add Button</string>
+    <string name="remove_button">remove button</string>
+    <string name="first_rectangle">First Rectangle</string>
+    <string name="second_rectangle">Second Rectangle</string>
+    <string name="verify">verify</string>
 </resources>
