@@ -43,7 +43,8 @@ class ValidateCNPJActivity : AppCompatActivity() {
             showNotValid()
             return
         }
-        if (cnpjValue.length == 14) {
+        if (cnpjValue.length == 14 &&
+            cnpjValue.substring(0,13) != "00000000000000") {
             val authDigitOne = cnpjValue.substring(0, 12)
             val weightDigitOne = "543298765432"
             var sumDigitOne = 0
@@ -120,5 +121,8 @@ class ValidateCNPJActivity : AppCompatActivity() {
 
     fun showIsValid() {
         Toast.makeText(this, "This CNPJ is Valid.", Toast.LENGTH_SHORT).show()
+    }
+    fun clearFields(view: View){
+        findViewById<EditText>(R.id.edit_field).setText("")
     }
 }
