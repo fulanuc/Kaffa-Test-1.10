@@ -11,7 +11,7 @@ import java.lang.Long
 
 class RectanglesIntersectActivity : AppCompatActivity() {
 
-    private lateinit var threeAndFour: ThreeAndFour
+    private lateinit var twoAndThree: TwoAndThree
     private lateinit var rectangle1x1: EditText
     private lateinit var rectangle1y1: EditText
     private lateinit var rectangle1x2: EditText
@@ -37,7 +37,7 @@ class RectanglesIntersectActivity : AppCompatActivity() {
 
     fun verify(view: View) {
         try {
-            threeAndFour = ThreeAndFour(
+            twoAndThree = TwoAndThree(
                 Long.parseLong(rectangle1x1.text.toString()),
                 Long.parseLong(rectangle1y1.text.toString()),
                 Long.parseLong(rectangle1x2.text.toString()),
@@ -48,14 +48,14 @@ class RectanglesIntersectActivity : AppCompatActivity() {
                 Long.parseLong(rectangle2y2.text.toString())
             )
         } catch (e: Exception) {
-            Log.d("RectIntersectActivity", e.message?: "fail to call call ThreeAndFour or parse to Long")
+            Log.d("RectIntersectActivity", e.message?: "fail to call call TwoAndThree or parse to Long")
         }
 
 /*      checks the numeric difference between X1's X2's and Y1's and Y2's
         they are allowed to cancel themselves presenting a resultant of zero but any negative
         value formulated from their difference would imply in a negative width (in case of X's)
         or negative height (in case of Y's)                                                    */
-        if (threeAndFour.calculaArea() > 0) {
+        if (twoAndThree.calculaArea() > 0) {
             isValid()
             return
         } else {

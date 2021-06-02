@@ -10,7 +10,7 @@ import java.lang.Long
 
 class AreaIntersectActivity : AppCompatActivity() {
 
-    private lateinit var threeAndFour: ThreeAndFour
+    private lateinit var twoAndThree: TwoAndThree
     private lateinit var rectangle1x1: EditText
     private lateinit var rectangle1y1: EditText
     private lateinit var rectangle1x2: EditText
@@ -38,7 +38,7 @@ class AreaIntersectActivity : AppCompatActivity() {
     fun verify(view: View) {
 
         try {
-            threeAndFour = ThreeAndFour(
+            twoAndThree = TwoAndThree(
                 Long.parseLong(rectangle1x1.text.toString()),
                 Long.parseLong(rectangle1y1.text.toString()),
                 Long.parseLong(rectangle1x2.text.toString()),
@@ -49,10 +49,10 @@ class AreaIntersectActivity : AppCompatActivity() {
                 Long.parseLong(rectangle2y2.text.toString())
             )
         } catch (e: Exception) {
-            Log.d("RectIntersectActivity", e.message?: "fail to call call ThreeAndFour or parse to Long")
+            Log.d("RectIntersectActivity", e.message?: "fail to call call TwoAndThree or parse to Long")
         }
 
-        val area = threeAndFour.calculaArea()
+        val area = twoAndThree.calculaArea()
         if (area >= 0) {
             Toast.makeText(this,
                 String.format("the area of given intersection is: %d", area), Toast.LENGTH_SHORT).show()
