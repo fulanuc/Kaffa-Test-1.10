@@ -21,7 +21,7 @@ class ValidateCNPJActivity : AppCompatActivity() {
     //11.444.777/0001-00 -> last digits are invalid
     //11.444.777/0001-61 -> corrected last digits
 
-    fun verify(view: View) {                        //identifies if the given cnpj is formated in a specific manner.
+    fun checkInput(view: View) {                        //identifies if the given cnpj is formated in a specific manner.
         val cnpj = editText.text.toString()
         val cnpjValue: String
         if (cnpj.length == 18 &&

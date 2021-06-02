@@ -1,9 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RectanglesIntersectActivity">
+    tools:context=".RectanglesIntersectActivity"
+    android:orientation="vertical"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+
+        android:text="@string/first_rectangle"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        >
+
+        <EditText
+            android:id="@+id/rectangle1x1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+
+            android:hint="X₁"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:id="@+id/rectangle1y1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+
+            android:hint="Y₁"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:id="@+id/rectangle1x2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+
+            android:hint="X₂"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:id="@+id/rectangle1y2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+
+            android:hint="Y₂"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+
+        android:text="@string/second_rectangle"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        >
+
+        <EditText
+            android:id="@+id/rectangle2x1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+
+            android:hint="X₁"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:id="@+id/rectangle2y1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+
+            android:hint="Y₁"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:id="@+id/rectangle2x2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+
+            android:hint="X₂"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:id="@+id/rectangle2y2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+
+            android:hint="Y₂"
+            android:inputType="number"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/verify_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:onClick="verify"
+            android:text="@string/verify"
+            android:enabled="true"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="28dp"
+
+            android:contentDescription="@string/remove_button"
+            android:src="@drawable/ic_baseline_refresh_24"
+            app:backgroundTint="@color/purple_500"
+            app:fabCustomSize="40dp"
+            app:maxImageSize="24dp"
+
+            app:layout_constraintBottom_toTopOf="@id/add_task_fab"
+            app:layout_constraintEnd_toEndOf="@id/add_task_fab"
+            app:layout_constraintStart_toStartOf="@id/add_task_fab"
+
+            android:onClick="clearFields"
+            />
+    </LinearLayout>
+</LinearLayout>

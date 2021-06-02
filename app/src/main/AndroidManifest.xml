@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KaffaTest">
-        <activity android:name=".TodoList.TodoListActivity"></activity>
+        <activity android:name=".TodoList.TodoListActivity" />
         <activity android:name=".AreaIntersectActivity" />
         <activity android:name=".RectanglesIntersectActivity" />
         <activity android:name=".HomeActivity">

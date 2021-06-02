@@ -9,6 +9,9 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.kaffatest.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.io.File
+import java.io.FileNotFoundException
+import kotlin.Exception
 
 const val filename = "todoList.txt"
 
@@ -22,7 +25,6 @@ class TodoListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todo_list)
-
         todoListTextView = findViewById(R.id.todo_list_text_view)
 
         taskText = findViewById(R.id.task_text_edit_text)
@@ -44,9 +46,15 @@ class TodoListActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-
+        val path = File(filesDir.absolutePath)
+        try {
+            // Makes sure the directory exists.
+            path.mkdirs()
+        }catch(exception: Exception){
+            Log.w(tag,exception.message ?: "Directory does not exist")
+            path.mkdir()
+        }
         this.openFileOutput(filename, Context.MODE_PRIVATE).use {
-
             val fileContents = todoListTextView.text.toString()
             it.write(fileContents.toByteArray())
             todoListTextView.text = ""
@@ -56,15 +64,20 @@ class TodoListActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        this.openFileInput(filename).bufferedReader().useLines { lines ->
+        try {
+            // Makes sure the directory exists.
+            this.openFileInput(filename).bufferedReader().useLines { lines ->
 //            lines.fold("") { some, text ->
 //                "$some\n$text"
 //            }
-            lines.forEach {
-                todoListTextView.text = "${todoListTextView.text}$it\n"
-            }
+                lines.forEach {
+                    todoListTextView.text = "${todoListTextView.text}$it\n"
+                }
 
-            Log.d(tag, "received: ${todoListTextView.text}")
+                Log.d(tag, "received: ${todoListTextView.text}")
+            }
+        }catch(exception: Exception){
+            Log.w(tag,exception.message ?: "Directory does not exist")
         }
     }
 

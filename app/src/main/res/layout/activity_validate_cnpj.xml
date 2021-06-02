@@ -11,7 +11,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/purple_700"
         android:text="Validate CNPJ"
@@ -37,13 +37,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:text="Verify"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginVertical="16dp"
         app:layout_constraintTop_toBottomOf="@id/edit_field"
-        android:onClick="verify"
+        android:onClick="checkInput"
         />
 
 
