@@ -43,8 +43,9 @@ class ValidateCNPJActivity : AppCompatActivity() {
             showNotValid()
             return
         }
+        val duplicatednumbers = "00000000000000"
         if (cnpjValue.length == 14 &&
-            cnpjValue.substring(0,13) != "00000000000000") {
+            cnpjValue.substring(0,13) != duplicatednumbers.substring(0,13)) {
             val authDigitOne = cnpjValue.substring(0, 12)
             val weightDigitOne = "543298765432"
             var sumDigitOne = 0
