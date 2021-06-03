@@ -11,7 +11,7 @@ Kotlin is presented as Questions 1, 2, 3 and 4.
 
 #### Install and Run the .apk
 
-- Download this file on Android emulator or on a smartphone
+- Download [***this file***](https://github.com/fulanuc/Kaffa-Test-1.10/raw/master/APK%2C%20PRNTSCRN%2C%20GIF/KaffaTest1.10-1to4.apk) on Android emulator or on a smartphone
 
 - Install said file. You can now run the application
 
